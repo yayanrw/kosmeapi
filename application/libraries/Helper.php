@@ -6,6 +6,8 @@ class Helper
     public function Authorize()
     {
         $headers = apache_request_headers();
+        print_r($headers);
+        die;
         if (array_key_exists('Authorization', $headers) && !empty($headers['Authorization'])) {
             $token = explode(' ', $headers['Authorization']);
             $decodedToken = AUTHORIZATION::validateTimestamp($token[1]);
