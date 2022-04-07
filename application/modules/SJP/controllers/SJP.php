@@ -17,7 +17,7 @@ class SJP extends REST_Controller
     public function qrcode_post()
     {
         try {
-            $this->helper->Authorize();
+            // $this->helper->Authorize();
             $data = $this->input->post();
             $result = $this->SJPModel->GetByQRCode($data);
             $this->set_response(array(
